@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="mp"%>
-<mp:master title="insert">
+<mp:master title="Passport Visa Management System">
 	<jsp:attribute name="head">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		

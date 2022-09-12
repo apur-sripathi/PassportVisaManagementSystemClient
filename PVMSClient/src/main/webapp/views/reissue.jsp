@@ -19,11 +19,15 @@ function valid(){
     var b = document.getElementsByName("registrationIdt")[0].value;
 	if(a!=b){
 		alert("Username is login id");
-		//window.location.reload();
-		/* window.location.href="applypassport"; */
 	}
-	/* window.location.href="appliedpassport"; */
 }
+function calculate(){
+	var a = document.getElementById("pincode").value;
+	if(a.length!=6){
+		alert("Pin Code must be of 6 digits");
+	}
+}
+
 
 </script>
 <title>APPLY PASSPORT</title>
@@ -34,54 +38,23 @@ function valid(){
         <f:form action="issuedpassport" modelAttribute="a">
                     <div class="h5 font-weight-bold text-center mb-3">Passport Renewal</div>
             <table>
-            
-            <tr>
-             		<div class="row">
-             			<td>
-             				<div class="col-25">
-        						<label for="reason">reason</label>
-      						</div>
-      					</td>
-      						<td><div class="col-75">
-        						<f:select type="text" id="reason" path="reason" style="width:99.9%">
-        							 <f:option value="-1">select Reason</f:option>
-                                     <f:option value="1">Lost/ Stolen Passport/ Damaged beyond recognition.</f:option>
-									 <f:option value="2">Renewal of Short Validity Passport(SVP)</f:option>
-									 <f:option value="3">Change in Name</f:option>
-									 <f:option value="4">Change/ Correction of Date of birth</f:option>
-									 <f:option value="5">others</f:option>
-        						</f:select>
-      						</div>
-      					</td>
-      					<td style="color: red" class="col-75">
-        						<f:errors path="reason"></f:errors>
-      					</td>
-      				</div>
-      			</tr>
-            
-            
              	<div class="row">
              		<tr>
-             			
              			<div class="col-25">
              				<td>
         						<label for="id">User Id</label>
       						</td>
-      						</div>
+      					</div>
       					
-      						<div class="col-25" >
+      					<div class="col-25" >
       						<td>
         						<f:input type="text" id="id" path="registrationIdt" placeholder="userid" style="width:70%" onchange="valid()"></f:input>
       						</td>
-      						</div>
+      					</div>
       					
-      					<td style="color: red" class="col-25">
-        						<f:errors path="registrationIdt"></f:errors>
-      					</td>
-      					</tr>
-      				</div>
-      			
-      			<tr>
+      						<td style="color: red" class="col-25"><f:errors path="registrationIdt"></f:errors></td>
+      				</tr>
+      			</div>
       			
       			
       			<tr>
@@ -167,7 +140,7 @@ function valid(){
       						</div>
       					</td>
       						<td><div class="col-75">
-        						<f:input type="text" id="pincode" path="pin" style="width:99.9%"></f:input>
+        						<f:input type="text" id="pincode" path="pin" style="width:99.9%" onchange="calculate()"></f:input>
       						</div>
       					</td>
       					<td style="color: red" class="col-75">
@@ -237,6 +210,33 @@ function valid(){
       					</td>
       				</div>
       			</tr>
+      			
+      			
+            <tr>
+             		<div class="row">
+             			<td>
+             				<div class="col-25">
+        						<label for="reason">Reason</label>
+      						</div>
+      					</td>
+      						<td><div class="col-75">
+        							<f:select type="text" id="reason" path="reason" style="width:99.9%">
+        							 	<f:option value="-1">select Reason</f:option>
+                                     	<f:option value="1">Lost/ Stolen Passport/ Damaged beyond recognition</f:option>
+                                     	<f:option value="2">Renewal of Short Validity Passport(SVP)</f:option>
+                                     	<f:option value="3">Change in Name</f:option>
+                                     	<f:option value="4">Change/ Correction of Date of birth</f:option>
+                                     	<f:option value="5">others</f:option>
+        							</f:select>
+      						</div>
+      					</td>
+      					<td style="color: red" class="col-75">
+        						<f:errors path="reason"></f:errors>
+      					</td>
+      				</div>
+      			</tr>
+            
+            
 
       
    <tr>

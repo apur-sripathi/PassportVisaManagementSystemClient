@@ -57,7 +57,7 @@
           <div class="field">
           <tr>
             <span class="fa fa-lock" style="color: gold;"></span>
-            <f:input type="text" id="password" path="pwd" placeholder="Password"></f:input>
+            <f:input type="password" id="password" path="pwd" placeholder="Password"></f:input>
            <span class="show">SHOW</span>
             <td><f:errors style="width: 10vw; color: red" path="pwd" cssClass="error"/></td>
             

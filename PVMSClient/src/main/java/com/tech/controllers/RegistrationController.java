@@ -36,8 +36,7 @@ public class RegistrationController {
 	
 	@RequestMapping("/")
 	public String getAllBooks(Model M) {
-		//M.addAttribute("userList",registrationService.getUsers());
-		return "home";
+		return "login";
 	}
 	
 	@RequestMapping("/logged")
@@ -53,7 +52,6 @@ public class RegistrationController {
 			M.addAttribute("user",registrationService.getUserById(l.getId()));
 			M.addAttribute("passport",passportService.getPassport(l.getId()));
 			M.addAttribute("visa",passportService.getVisa(l.getId()));
-			//System.out.println(passportService.getPassport(l.getId()));
 			return "hom2";
 		}
 		M.addAttribute("msg",user);
@@ -102,7 +100,7 @@ public class RegistrationController {
 	@RequestMapping("/forgot")
 	public String forgot(Model M){
 		List<String> m = Arrays.asList(a);
-		M.addAttribute("l",a);
+		M.addAttribute("l",m);
 		return "forgot";
 	}
 	@RequestMapping("/fetchValid")

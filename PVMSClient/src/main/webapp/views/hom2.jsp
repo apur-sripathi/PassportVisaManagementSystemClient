@@ -115,9 +115,7 @@ function validp(){
 			<nav>
 				<ul>
 					<li><a href="profile"><c:out value="${sessionScope.userid}"></c:out></a></li>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">About</a></li>
+					<li></li>
 					<li><a href="/logout">Logout</a></li>
 				</ul>
 			</nav>

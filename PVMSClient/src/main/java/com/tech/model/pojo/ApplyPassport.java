@@ -15,7 +15,6 @@ public class ApplyPassport {
 	private String country;
 	private State stateId;
 	private City cityId;
-	//@Pattern(regexp = "[0-9]{6}",message = "Exactly 6 digits")
 	@NotNull(message = "Required")
 	private Integer pin;
 	@NotNull(message = "Required")

@@ -27,15 +27,6 @@ public class PassportService {
 	
 	public String url2 = "http://localhost:9000/visa/";
 	
-	private static Map<Integer, String> reason = new HashMap<Integer,String>() {{
-		put(-1, null);
-		put(1, "Lost/ Stolen Passport/ Damaged beyond recognition.");
-		put(2, "Renewal of Short Validity Passport(SVP)");
-		put(3, "Change in Name");
-		put(4, "Change/ Correction of Date of birth");
-		put(5, "others");
-	}};
-	
 	public List<City> getCities(String stateId){
 		Map<String,String> params = new HashMap<String, String>();
 		params.put("stateId",stateId);
@@ -72,10 +63,6 @@ public class PassportService {
 		return Arrays.asList(a);
 	}
 	
-	public String getReason(Integer id) {
-		//reason.
-		return reason.get(id);
-	}
 
 	public String reinsertPassport(ApplyPassport a) {
 		return restTemplate.postForObject(url1+"reIssuePassport",a, String.class);

@@ -36,12 +36,12 @@
 			<ul>
 				<li> </li>
 			
-				<li><a href="loginmain">Home</a></li>
+				<li><a href="loginmain"><b>Home</b></a></li>
 				
-				<li><a href="contact">Contact Us</a></li>	
-				<li><a href="about">About Us</a></li>
-				<li style="float: right; color: yellow"><a href="login">login</a></li>
-				<li style="float: right; color: yellow"><a href="register">Sign Up</a></li>
+				<li><a href="contact"><b>Contact Us</b></a></li>	
+				<li><a href="about"><b>About Us</b></a></li>
+				<li style="float: right; color: yellow"><a href="login"><b>login</b></a></li>
+				<li style="float: right; color: yellow"><a href="register"><b>Sign Up</b></a></li>
 			</ul>
 		</div>
 

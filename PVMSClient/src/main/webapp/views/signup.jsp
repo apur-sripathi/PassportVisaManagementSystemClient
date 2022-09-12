@@ -34,15 +34,10 @@
 			color:white;
 			}
 			
-			/* input[type="text"] {
-    			width: 240px;
-   				height:8px;
-    			content:
-			}  */
 			 input[type=text]  {
- 				 width: 50%;
+ 				 
   				padding: 4px;
- 				 margin: 5px 0 22px 0;
+ 				 margin: 5px 0 20px 0;
   				display: inline-block;
  					 border: none;
   				background: #f1f1f1;
@@ -52,10 +47,11 @@
 			}
 
 			.content{
-
-				float: right;
-    			margin-left: 50px;
-     			margin-right: 30%;
+    		 	margin-left: 20%;
+     			margin-right: 30%; 
+     			width: 100%;
+     			height: 50%;
+     			
 			}
 	</style>
     <title>Registration</title>
@@ -68,146 +64,136 @@
       	<script>display();</script>
       </a:if>
       <br><br><br>
-        <h1 style="color: white;font-family: Bookman Old Style, Verdana;padding-right: 20%;">Registration</h1>
+        <h1 style="color: white;font-family: Bookman Old Style, Verdana;padding-right: 50%;">Registration</h1>
         
-       <f:form action="registering" modelAttribute="r">
-     <br>
+       <f:form action="registering" modelAttribute="r" >
+       <table>
+     	<tr>
           <div class="field">
-          <tr>
-             <td><label for="firstname" class="fl fontLabel">Firstname</label></td>
-           <td> <f:input type="text" id="firstname" path="fName" placeholder="firstname" value="${r.fName }"></f:input></td>
-            <td  style="position: inherit;"><f:errors style="width: 10vw; color: red" path="fName" cssClass="error"/></td>
-            
-            </div>
-            
-           
           
-            <div class="field">
-          <tr>
-            <label for="surname" class="fl fontLabel">surname</label>
-            <f:input type="text" id="surname" path="surName" placeholder="Father Name" value="${r.surName }"></f:input>
-            <td style="position: inherit;"><f:errors style="width: 10vw; color: red" path="surName" cssClass="error"/></td>
+             <td><label for="firstname" class="fl fontLabel gc">Firstname</label></td>
+           <td > <f:input type="text" id="firstname" path="fName" placeholder="firstname" value="${r.fName}" ></f:input></td>
+            <td  ><f:errors path="fName" cssClass="error"/></td>
             
             </div>
-            
-             <div  class="field">
-          <tr>
-           <label for="email" class="fl fontLabel">Email</label>
-            
-            <f:input type="text" id="email" path="email" placeholder="email" onchange="validateEmail()"></f:input>
-            <td style="color: red;width: 50%;"><f:errors  style="width: 10vw; color: red" path="email" cssClass="error"/></td>
             </tr>
+            <tr>
+          <div class="field">
+          
+             <td><label for="surname" class="fl fontLabel gc">Surname</label></td>
+           <td > <f:input type="text" id="surname" path="surName" placeholder="Father Name" value="${r.surName }"></f:input></td>
+            <td ><f:errors style="width: 10vw; color: red" path="surName" cssClass="error"/></td>
+            
             </div>
+            </tr>
+            
+            <tr>
+          	<div class="field">
+          
+             	<td><label for="email" class="fl fontLabel gc">Email</label></td>
+           		<td > <f:input type="text" id="email" path="email" placeholder="email" onchange="validateEmail()"></f:input></td>
+            	<td ><f:errors  style="width: 10vw; color: red" path="email" cssClass="error"/></td>
+            
+            </div>
+            </tr>
+            
+            
+            <tr>
+            <div class="field">
+          
+             	<td><label for="date_of_birth" class="fl fontLabel gc">Date of birth</label></td>
+           		<td ><f:input type="date" id="date_of_birth" path="dob" placeholder="date_of_birth" style="width:85%;"></f:input></td>
+            	<td ><f:errors style="width: 10vw; color: red" path="dob" cssClass="error"/></td>
+            
+            </div>
+            </tr>
             
             <a:if test="${not empty x}">
             	<script>displayError();</script>
             </a:if>
-        
-      
-           <div class="field">
-          <tr>
-          <label for="date_of_birth" class="fl fontLabel">Date of birth</label>
-            <f:input type="date" id="date_of_birth" path="dob" placeholder="date_of_birth" style="width:50%;"></f:input>
-            <td style="position: inherit;"><f:errors style="width: 10vw; color: red" path="dob" cssClass="error"/></td>
             
-            </div>
-          
-           <br>
-           
+            <tr>
             <div class="field">
-          <tr>
-          <label for="address" class="fl fontLabel">Address</label>
-            <f:input type="text" id="address" path="address" placeholder="address"></f:input>
-            <td style="position: inherit;"><f:errors style="width: 10vw; color: red" path="address" cssClass="error"/></td>
-            
-            </div>
-        
-           
-           
-            <div class="field">
-          <tr>
-               <label for="contact" class="fl fontLabel">Contact</label>
-            <f:input type="text" id="contact" path="contactNo" placeholder="contact"></f:input>
-            <td style="position: inherit;"><f:errors style="width: 10vw; color: red" path="contactNo" cssClass="error"/></td>
-            
-            </div>
           
-          <div class="field">
-          <tr>
-            <label for="qualification" class="fl fontLabel">Qualification</label>
-            <f:input type="text" id="qualification" path="qualification" placeholder="qualification"></f:input>
-            <td><f:errors style="width: 10vw; color: red" path="qualification" cssClass="error"/></td>
+             	<td><label for="address" class="fl fontLabel gc">Address</label></td>
+           		<td ><f:input type="text" id="address" path="address" placeholder="address"></f:input></td>
+            	<td ><f:errors style="width: 10vw; color: red" path="address" cssClass="error"/></td>
             
+            </div>
             </tr>
+            
+            <tr>
+            <div class="field">
+          
+             	<td><label for="contact" class="fl fontLabel gc">Contact</label></td>
+           		<td ><f:input type="text" id="contact" path="contactNo" placeholder="contact"></f:input></td>
+            	<td ><f:errors style="width: 10vw; color: red" path="contactNo" cssClass="error"/></td>
+            
             </div>
+            </tr>
+            
+            <div class="field">
+          
+             	<td><label for="qualification" class="fl fontLabel gc">Qualification</label></td>
+           		<td><f:input type="text" id="qualification" path="qualification" placeholder="qualification"></f:input></td>
+            	<td><f:errors style="width: 10vw; color: red" path="qualification" cssClass="error"/></td>
+            
+            </div>
+            </tr>
          
         
-                      
-           <div class="field" >
-          <tr>
-          
-
-				<label for="gender" class="fl fontLabel">gender</label>
-					<td><input type="radio" name="gender" value="Male"  path="gender" />Male
-						 <input type="radio" name="gender" value="Female"  path="gender" />Female
-						 <input type="radio" name="gender" value="Trans"  path="gender" />Trans
-					<f:errors style="width: 10vw; color: red" path="gender" cssClass="error"/></td>
-               
-</tr> 
-</div>
-<br>
-
-<td> <div class="field">
-               <label for="type" type="text" class="fl fontLabel">Apply Type</label>
-                   <select name="applyType" style="width:50%;">
+               <tr>       
+           			<div class="field" >
+						<td><label for="gender" class="fl fontLabel gc">Gender</label></td>
+						<td class="gc" ><f:radiobutton name="gender" value="Male"  path="gender" class="gc" />Male
+						 	<f:radiobutton name="gender" value="Female"  path="gender" class="gc" />Female
+						 	<f:radiobutton name="gender" value="Trans"  path="gender" class="gc" />Trans</td>
+						<td><f:errors style="width: 10vw; color: red" path="gender" cssClass="error"/></td>
+					</div>
+				</tr> 
+			<tr>
+				<div class="field">
+                <td> <label for="type" type="text" class="fl fontLabel gc">Apply Type</label></td>
+                  <td> <select name="applyType" style="width:85%;">
                  <option selected="" value="-1">Apply Type</option>
-                   <option value="1">passport</option>
+                   <option value="1">Passport</option>
                 <option value="2">Visa</option>
-                            </select>
-                            <f:errors style="width: 10vw; color: red" path="applyType" cssClass="error"/>
+                            </select></td>
+                         <td>   <f:errors style="width: 10vw; color: red" path="applyType" cssClass="error"/></td>
                
-               </div>
-               </td>
-               
-</tr>
+               </div>             
+			</tr>
          
        
          
-          <br>
+        <tr>
           <div class="field">
-          <tr>
-<label for="hintquestion" class="fl fontLabel">Hint Question</label>
-<td><select name="hintQuestion" style="width:50%;">
+          
+			<td><label for="hintquestion" class="fl fontLabel gc">HintQuestion</label></td>
+			<td><select name="hintQuestion" style="width:85%;">
                  	<option value="-1">Select</option>
                  	<option value="What is your favorite colour?">What is your favorite colour?</option>
                   	<option value="What is your lucky number?">What is your lucky number?</option>
                   	<option value="Who is your favorite cricketer?">Who is your favorite cricketer?</option>
-                  	<option value="others">others</option> </select></td>
-                  	<errors style="width: 10vw; color: red" path="hintQuestion" cssClass="error"/></td>
+                  	<option value="others">others</option> 
+                 </select></td>
+                  	<td><errors style="width: 10vw; color: red" path="hintQuestion" cssClass="error"/></td>
      
-</tr>
-</div>
-<br>
-<tr>
 
-            
+			</div>
+		</tr>
+		<tr>
           <div class="field">
-          <tr>
-            <label for="hintanswer" class="fl fontLabel">Hint Answer</label>
-            <f:input type="text" id="hintanswer" path="hintAnswer" placeholder="hintanswer"></f:input>
-           
-            <td><f:errors style="width: 10vw; color: red" path="hintAnswer" cssClass="error"/></td>
-            
-            </tr>
+            <td><label for="hintanswer" class="fl fontLabel gc">HintAnswer</label></td>
+            <td><f:input type="text" id="hintanswer" path="hintAnswer" placeholder="hintanswer"></f:input></td>
+            <td><f:errors path="hintAnswer" cssClass="error"/></td>
             </div>
+          </tr>
+          <tr>
+          	<td colspan="2" align="center"><button class="btn btn-success">Submit</button></td>
+          </tr>
+          </table>
           
-          <button class="btn btn-success">Submit</button>
-          
-       <!-- 
-          <div  class="field">
-            <input type="submit" value="LOGIN" style="color:red">
-          </div>
-     -->
         </f:form>
         
    

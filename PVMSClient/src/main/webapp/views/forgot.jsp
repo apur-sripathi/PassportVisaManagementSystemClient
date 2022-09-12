@@ -40,7 +40,6 @@
 <jsp:attribute name="content">
  <div class="bg-img">
       <div class="content">
-      <a:out value="${msg }"></a:out>
         <header style="color: white; font-family: cursive; font-size: xx-large;">Forgot Password</header>
         
        <f:form action="validForgot">
@@ -101,13 +100,12 @@
         	</script>
         </a:if>
          </table>
+         <br>
+         
          <div  class="field">
             <input type="submit" value="submit" onclick="validate();">
           </div>
-         <!-- <button style="color:blue; width: 30%;height: 10%;font-size: x-large; align-content: center; background-color: green;" type="submit" onclick="validate();">Submit</button> -->
        </f:form>  
-       
-       <a:out value="${msg }"></a:out>
             
         </div>
         </div>

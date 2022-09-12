@@ -27,17 +27,21 @@ public class PassportController {
 	@Autowired
 	RegistrationService registrationService;
 	
-//	@RequestMapping("/applyPassport")
-//	public String insertPassport(Model M) {
-//		
-//		return "passport";
-//	}
-	
 	@RequestMapping("/afterlogin")
 	public String insertpassport(@SessionAttribute("userid") String id,Model M){
+		M.addAttribute("user",registrationService.getUserById(id));
 		M.addAttribute("passport",passportService.getPassport(id));
+		M.addAttribute("visa",passportService.getVisa(id));
 		return "hom2";
 	}
+	
+	@RequestMapping("/display")
+	public String display(Model M) {
+		
+		M.addAttribute("msg","Hello");
+		return "displayMessage";
+	}
+	
 	
 	@RequestMapping("/getcities")
 	public String getCities(@RequestParam("state") String state,@RequestParam("registration") String registration,@RequestParam("country") String country,@ModelAttribute("a") ApplyPassport a,Model M) {
@@ -60,15 +64,16 @@ public class PassportController {
 	}
 	
 	@RequestMapping("/appliedpassport")
-	public String appliedpassport(@Valid @ModelAttribute("a") ApplyPassport a,BindingResult bs,Model M){
+	public String appliedpassport(@Valid @ModelAttribute("a") ApplyPassport a,BindingResult bs,Model M,@SessionAttribute("userid") String is){
 		if(bs.hasErrors()) {
 			return "ApplyPassport";
 		}
 		System.out.println(a);
 		M.addAttribute("msg",passportService.insertPassport(a));
 		M.addAttribute("a",new ApplyPassport());
+		M.addAttribute("passport",passportService.getPassport(is));
 		M.addAttribute("s",passportService.getAllStates());
-		return "ApplyPassport";
+		return "displayMessage";
 	}
 	
 	//APPLY VISA
@@ -80,15 +85,16 @@ public class PassportController {
 	}
 	
 	@RequestMapping("/appliedvisa")
-	public String appliedvisa(@Valid @ModelAttribute("m") ApplyVisa a,BindingResult bs,Model M){
+	public String appliedvisa(@Valid @ModelAttribute("m") ApplyVisa a,BindingResult bs,Model M,@SessionAttribute("userid") String is){
 		if(bs.hasErrors()) {
 			return "applyvisa";
 		}
 		System.out.println(a);
 		
 		M.addAttribute("msg",passportService.insertVisa(a));
+		M.addAttribute("visa",passportService.getVisa(is));
 		M.addAttribute("m",new ApplyVisa());
-		return "applyvisa";
+		return "displayMessage";
 	}
 	
 	
@@ -108,7 +114,7 @@ public class PassportController {
 		M.addAttribute("msg",passportService.reinsertPassport(a));
 		M.addAttribute("s",passportService.getAllStates());
 		M.addAttribute("a",new ApplyPassport());
-		return "reissue";
+		return "displayMessage";
 	}
 	
 	@RequestMapping("/getcities1")
@@ -140,7 +146,7 @@ public class PassportController {
 		System.out.println(a);
 		M.addAttribute("msg",passportService.cancelVisa(a));
 		M.addAttribute("x",new ApplyVisa());
-		return "VisaCancel";
+		return "displayMessage";
 	}
 	
 	//Get Details

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/style.css"> 
 </jsp:attribute>
 <jsp:attribute name="content">
-<div class="bg-light">
+<div >
     <div class="container">
         <div class="row justify justify-content-center">
             <div class="col-11 col-md-8 col-lg-6 col-xl-5">

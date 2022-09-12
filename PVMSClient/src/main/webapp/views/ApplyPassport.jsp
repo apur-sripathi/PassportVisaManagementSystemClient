@@ -18,10 +18,13 @@ function valid(){
     var b = document.getElementsByName("registrationIdt")[0].value;
 	if(a!=b){
 		alert("Username is login id");
-		//window.location.reload();
-		/* window.location.href="applypassport"; */
 	}
-	/* window.location.href="appliedpassport"; */
+}
+function calculate(){
+	var a = document.getElementById("pincode").value;
+	if(a.length!=6){
+		alert("Pin Code must be of 6 digits");
+	}
 }
 
 </script>
@@ -149,7 +152,7 @@ function valid(){
       						</div>
       					</td>
       						<td><div class="col-75">
-        						<f:input type="text" id="pincode" path="pin" style="width:99.9%"></f:input>
+        						<f:input type="text" id="pincode" path="pin" style="width:99.9%" onchange="calculate();"></f:input>
       						</div>
       					</td>
       					<td style="color: red" class="col-75">

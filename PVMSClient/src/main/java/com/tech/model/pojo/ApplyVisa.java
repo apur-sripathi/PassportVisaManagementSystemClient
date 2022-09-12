@@ -10,9 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class ApplyVisa {
 	private String visaId;
 	private Registration registrationId;
-	//@NotNull(message = "Required")
 	private Integer country;
-	//@NotNull(message = "Required")
 	private Integer occupation;
 	@NotNull(message = "Required")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

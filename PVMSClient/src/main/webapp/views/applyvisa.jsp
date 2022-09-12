@@ -13,10 +13,14 @@ function valid(){
     var b = document.getElementById("id").value;
 	if(a!=b){
 		alert("Username is login id");
-		//window.location.reload();
-		/* window.location.href="applypassport"; */
 	} 
-	/* window.location.href="appliedpassport"; */
+}
+function validate(){
+	 var a = '${sessionScope.passport.passId}';
+   	var b = document.getElementById("passid").value;
+	if(a!=b){
+		alert("This is not your current Passport Id");
+	} 
 }
 </script>
 </jsp:attribute>
@@ -60,7 +64,7 @@ function valid(){
       					
       						<div class="col-25" >
       						<td>
-        						<f:input type="text" id="id" path="passid" placeholder="PassId" style="width:70%"></f:input>
+        						<f:input type="text" id="passid" path="passid" placeholder="PassId" style="width:70%" onchange="validate()"></f:input>
       						</td>
       						</div>
       					
